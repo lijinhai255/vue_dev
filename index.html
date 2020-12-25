@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./dist/vue.js"></script>
+</head>
+
+<body>
+  <div id='app'>
+    <div>
+
+      <h2 v-if="message">{{message}}</h2>
+      <button @click="showName">showName</button>
+      <div v-if='v'>
+        <div>
+          <p>我爱中国</p>
+          <p>中国爱我</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        name: '我爱',
+        message: 'Hello Vue!'
+      },
+      methods: {
+        showName() {
+          alert(this.name)
+        }
+      },
+
+    });
+  </script>
+</body>
+
+</html>
+<!--
+  with(this) {
+  return _c('div', {
+      attrs: {
+          "id": "app"
+      }
+  }, [_c('div', [(message) ? _c('h2', [_v(_s(message))]) : _e(), _v(" "), _c('button', {
+      on: {
+          "click": showName
+      }
+  }, [_v("showName")]), _v(" "), _m(0)])])
+}
+-->
